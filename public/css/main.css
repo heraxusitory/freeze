@@ -12,3 +12,20 @@
     margin-left: 10px;
     margin-rigth: 10px;
 }
+.carousel-inner .media {
+    height: 800px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.title-absolute .absolute-obj {
+    position: absolute;
+    top: 45%;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+}
+.title-absolute .absolute-obj .title {
+    text-align: center;
+}
