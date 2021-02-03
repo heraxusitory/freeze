@@ -5,19 +5,20 @@ header .media-display {
     background-attachment: fixed;
     background-position: bottom;
     background-size: cover;
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
+    /*filter: blur(2px);*/
+    /*-webkit-filter: blur(2px);*/
 }
 header .text-display {
-    background-color: rgba(0,0,0,0.1);
+    /*background-color: rgba(0,0,0,0.1);*/
+    background-color: rgba(225, 225, 0, 1);
     font-weight: bold;
-    border: 3px solid #f1f1f1;
+    /*border: 3px solid #f1f1f1;*/
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    width: 350px;
+    width: 450px;
     padding: 20px;
     text-align: center;
     color: #ffffff;
@@ -25,13 +26,22 @@ header .text-display {
     justify-content: center;
     align-items: center;
 }
+header .text-display .main_title {
+    font-size: 76px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+header .text-display .subtitle {
+    font-size: 22px;
+}
 
 .custom-main_navigation {
     display: flex;
     justify-content: space-around;
     color: #ffffff;
     /*background-color: #3f3f3f;*/
-    background-color: #1c7430;
+    background-color: green;
+    /*background-color: #1c7430;*/
     text-align: center;
 }
 
