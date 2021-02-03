@@ -34,36 +34,43 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active title-absolute">
-                        <div class="absolute-obj">
-                            <h3 class="title hight">Зал</h3>
-                        </div>
-                        <div class="media">
-                            <img src="{{ asset('/img/slider/remont-zala.jpg') }}" class="d-block w-100"
-                                 alt="Ремонт зала">
-                        </div>
-                    </div>
-                    <div class="carousel-item title-absolute">
-                        <div class="absolute-obj">
-                            <h3 class="title hight">Спальни</h3>
-                        </div>
-                        <div class="media">
-                            <img src="{{ asset('/img/slider/remont-spalny.jpg') }}" class="d-block w-100" alt="...">
+                        <div class="media" style="
+                            background-image: url({{ asset('/img/slider/remont-zala.jpg') }});
+                            background-repeat: no-repeat;
+                            background-size: cover;">
+                            <div class="title-container">
+                                <h3 class="title hight">Зал</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="carousel-item title-absolute">
-                        <div class="absolute-obj">
-                            <h3 class="title hight">Кухни</h3>
-                        </div>
-                        <div class="media">
-                            <img src="{{ asset('/img/slider/remont-kuhny.jpg') }}" class="d-block w-100" alt="...">
+                        <div class="media" style="
+                            background-image: url({{ asset('/img/slider/remont-spalny.jpg') }});
+                            background-repeat: no-repeat;
+                            background-size: cover;">
+                            <div class="title-container">
+                                <h3 class="title hight">Спальни</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="carousel-item title-absolute">
-                        <div class="absolute-obj">
-                            <h3 class="title hight">Санузел</h3>
+                        <div class="media" style="
+                            background-image: url({{ asset('/img/slider/remont-kuhny.jpg') }});
+                            background-repeat: no-repeat;
+                            background-size: cover;">
+                            <div class="title-container">
+                                <h3 class="title hight">Кухни</h3>
+                            </div>
                         </div>
-                        <div class="media">
-                            <img src="{{ asset('/img/slider/remont-vanna.jpg') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item title-absolute">
+                        <div class="media" style="
+                            background-image: url({{ asset('/img/slider/remont-vanna.jpg') }});
+                            background-repeat: no-repeat;
+                            background-size: cover;">
+                            <div class="title-container">
+                                <h3 class="title hight">Санузел</h3>
+                            </div>
                         </div>
                     </div>
                 </div>

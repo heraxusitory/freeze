@@ -2,8 +2,9 @@ header .media-display {
     height: 30rem;
     background-color: #0f6674;
     background-image: url(../img/remont.jpeg);
-    background-attachment: fixed;
-    background-position: bottom;
+    /*background-attachment: fixed;*/
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
 
@@ -55,4 +56,46 @@ header .text-display .subtitle {
 
 .custom-main_navigation > .nav-item > .nav-link:hover {
     color: #888a85;
+}
+
+@media (max-width: 1025px) {
+    header .text-display {
+        top: 20%;
+    }
+}
+
+@media (max-width: 500px) {
+    header .text-display {
+        width: 250px;
+        top: 30%;
+    }
+    header .text-display .main_title {
+        font-size: 50px;
+    }
+    header .text-display .subtitle {
+        font-size: 18px;
+    }
+}
+
+/*@media (max-width: 300px) {
+    header .text-display .main_title {
+        font-size: 50px;
+    }
+    header .text-display .subtitle {
+        font-size: 18px;
+    }
+
+}*/
+
+@media (max-width: 300px) {
+    header .text-display {
+        top: 30%;
+    }
+    header .text-display .main_title {
+        font-size: 50px;
+    }
+    header .text-display .subtitle {
+        font-size: 18px;
+    }
+
 }
