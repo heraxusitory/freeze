@@ -1,0 +1,44 @@
+header .media-display {
+    height: 30rem;
+    background-color: #0f6674;
+    background-image: url(../img/remont.jpeg);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+header .text-display {
+    background-color: rgba(0,0,0,0.1);
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-main_navigation {
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+    /*background-color: #3f3f3f;*/
+    background-color: #1c7430;
+    text-align: center;
+}
+
+.custom-main_navigation > .nav-item > .nav-link{
+   color: #ffffff;
+}
+
+.custom-main_navigation > .nav-item > .nav-link:hover {
+    color: #888a85;
+}
