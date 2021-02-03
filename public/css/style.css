@@ -2,9 +2,9 @@ header .media-display {
     height: 30rem;
     background-color: #0f6674;
     background-image: url(../img/remont.jpeg);
-    /*background-attachment: fixed;*/
-    background-repeat: no-repeat;
-    background-position: center;
+    background-attachment: fixed;
+    /*background-repeat: no-repeat;*/
+    background-position: bottom;
     background-size: cover;
 }
 
