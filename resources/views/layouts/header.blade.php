@@ -25,7 +25,7 @@
 <body>
 <header>
     <div class="container">
-        <div class="media-display">
+        <div class="media-display" id="mediaHeader">
         </div>
         <div class="text-display">
             <div>

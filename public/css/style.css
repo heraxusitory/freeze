@@ -5,8 +5,12 @@ header .media-display {
     background-attachment: fixed;
     background-position: bottom;
     background-size: cover;
-    /*filter: blur(2px);*/
-    /*-webkit-filter: blur(2px);*/
+}
+
+header .media-display.blured {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    transition: 2s;
 }
 header .text-display {
     /*background-color: rgba(0,0,0,0.1);*/

@@ -1,5 +1,10 @@
 @extends('layouts.main')
 @section('title', 'Main')
+
+@section('css')
+    <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
     <div class="container">
         <div class="info-block">
@@ -25,4 +30,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script src="{{ asset('/js/main/index.js') }}"></script>
 @endsection
