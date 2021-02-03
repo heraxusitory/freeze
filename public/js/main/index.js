@@ -1,10 +1,9 @@
 const blurHeader = (event) => {
-    console.log('window.scrollY', window.scrollY);
     let headerMedia = $('#mediaHeader');
-    if (window.scrollY > 20) {
+    if (window.scrollY > 5) {
         headerMedia.addClass('blured')
     }
-    if (window.scrollY <= 20) {
+    if (window.scrollY <= 10) {
         if (headerMedia.hasClass('blured')) {
             headerMedia.removeClass('blured')
         }
