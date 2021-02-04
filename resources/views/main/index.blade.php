@@ -31,95 +31,13 @@
                 <img src="{{ asset('/img/icons/info.svg') }}" data-toggle="tooltip" data-placement="top"
                      title="Приведены не все услуги, подробно уточняйте у специалистов">
             </h4>
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active title-absolute">
-                        <div class="media" style="
-                            background-image: url({{ asset('/img/slider/remont-zala.jpg') }});
-                            background-repeat: no-repeat;
-                            background-size: cover;">
-                            <div class="title-container">
-                                <h3 class="title hight">Зал</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item title-absolute">
-                        <div class="media" style="
-                            background-image: url({{ asset('/img/slider/remont-spalny.jpg') }});
-                            background-repeat: no-repeat;
-                            background-size: cover;">
-                            <div class="title-container">
-                                <h3 class="title hight">Спальни</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item title-absolute">
-                        <div class="media" style="
-                            background-image: url({{ asset('/img/slider/remont-kuhny.jpg') }});
-                            background-repeat: no-repeat;
-                            background-size: cover;">
-                            <div class="title-container">
-                                <h3 class="title hight">Кухни</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item title-absolute">
-                        <div class="media" style="
-                            background-image: url({{ asset('/img/slider/remont-vanna.jpg') }});
-                            background-repeat: no-repeat;
-                            background-size: cover;">
-                            <div class="title-container">
-                                <h3 class="title hight">Санузел</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+            @include('main.components.services_slider')
         </div>
 
         <div class="info-block">
             <div id="reviews">
                 <h4>Отзывы</h4>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="review">
-                                <h5>Name</h5>
-                                <span>rating</span>
-                                <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="review">
-                                <h5>Name</h5>
-                                <span>rating</span>
-                                <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="review">
-                                <h5>Name</h5>
-                                <span>rating</span>
-                                <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="review">
-                                <h5>Name</h5>
-                                <span>rating</span>
-                                <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @include('main.reviews')
             </div>
         </div>
     </div>
