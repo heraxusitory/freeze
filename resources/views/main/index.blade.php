@@ -3,6 +3,7 @@
 
 @section('css')
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/review.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
