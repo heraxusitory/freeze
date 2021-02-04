@@ -37,7 +37,7 @@
         </div>
         <ul class="nav custom-main_navigation">
             <li class="nav-item"><a class="nav-link" href="#">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Оставить заявку</a></li>
+            <li class="nav-item"><a class="nav-link application" href="#" data-url="{{route('get.form')}}" data-toggle="modal" data-target="#modal-application">Оставить заявку</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Отзывы</a></li>
         </ul>
     </div>

@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('main.index');
 });
 
+Route::get('/form/get', 'FormController@getForm')->name('get.form');
+Route::post('/form/store', 'FormController@formStore')->name('form.store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
