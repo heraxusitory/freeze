@@ -39,6 +39,8 @@
             <li class="nav-item"><a class="nav-link" href="#">Главная</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Оставить заявку</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Отзывы</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Задать вопрос</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"></a></li>
         </ul>
     </div>
 </header>
