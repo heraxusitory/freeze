@@ -2,16 +2,18 @@
 const checkQuestionForm = () => {
     let questionField = $('#question');
     let phoneField = $('#phone');
+    let nameField = $('#name');
 
-    return errorListener([questionField, phoneField], true);
+    return errorListener([questionField, phoneField, nameField], true);
 }
 
 // event
 const checkQuestionFormOnInput = () => {
     let questionField = $('#question');
     let phoneField = $('#phone');
+    let nameField = $('#name');
 
-    return errorListener([questionField, phoneField]);
+    return errorListener([questionField, phoneField, nameField]);
 }
 
 // Listener method
@@ -47,8 +49,10 @@ const submitQuestion = (event) => {
             data: form.serialize(),
             dataType: 'json',
             success(data) {
-                console.log('tttttt123123');
                 $('#modal-application').modal('hide');
+                if (data.status === 'ok') {
+
+                }
             },
             error(error) {
                 console.log(error);
@@ -62,5 +66,6 @@ $(document).ready(() => {
     let modalW = $('#modal-application');
     modalW.on('input', '#questionForm textarea#question', checkQuestionFormOnInput);
     modalW.on('input', '#questionForm input#phone', checkQuestionFormOnInput);
+    modalW.on('input', '#questionForm input#name', checkQuestionFormOnInput);
     modalW.on('submit', '#questionForm', submitQuestion);
 });

@@ -10,5 +10,12 @@
         <input class="form-control" type="tel" id="phone" required name="phone">
         <div class="alert alert-danger error error-report" style="display:none;"></div>
     </div>
-
+    <div class="form-group">
+        <label for="name" class="title">Как к вам обращаться?</label>
+        <input class="form-control" type="tel" id="name" required name="name">
+        <div class="alert alert-danger error-report" style="display:none;"></div>
+    </div>
+    <div class="form-group">
+        <div class="all_errors alert alert-danger" style="display: none;"></div>
+    </div>
 </form>
