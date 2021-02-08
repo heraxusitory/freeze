@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('main.index');
-});
+})->name('main');
 
 Route::get('/form/get', 'FormController@getForm')->name('get.form');
 Route::post('/form/store', 'FormController@formStore')->name('form.store');
