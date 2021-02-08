@@ -58,6 +58,15 @@ header .text-display .subtitle {
     color: #888a85;
 }
 
+#alert-box {
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
+    z-index: 2;
+    display: none;
+    transition: 2s;
+}
+
 @media (max-width: 1025px) {
     header .text-display {
         top: 20%;

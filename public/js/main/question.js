@@ -51,7 +51,10 @@ const submitQuestion = (event) => {
             success(data) {
                 $('#modal-application').modal('hide');
                 if (data.status === 'ok') {
-
+                    showTooltipModal('Ваша заявка успешно принята, ожидайте обратной связи!');
+                }
+                if (data.status === 'error') {
+                    showTooltipModal('Приносим извенения, сервис временно недоступен :(', true);
                 }
             },
             error(error) {
@@ -60,6 +63,23 @@ const submitQuestion = (event) => {
         });
     }
     return false;
+}
+
+const showTooltipModal = (text, error = false) => {
+    let container = $('#alert-box');
+    let classProp = 'success';
+    if (error === true) {
+        classProp = 'danger';
+    }
+    let template = `
+        <div class="alert alert-${classProp}">
+            ${text}
+        </div>`;
+    container.html(template);
+    container.show(1000);
+    setTimeout(() => {
+        container.hide(2000)
+    }, 4*1000);
 }
 
 $(document).ready(() => {
