@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
-    $('.modal-body').on('input', '#phoneNumber', function() {
-        $(this).mask("+7(999)-999-99-99")
+    $('.modal-body').on('click', '#phoneNumber', function() {
+        console.log($(this))
+        $(this).mask("+7(999)-999-99-99", {placeholder: "+7(___)-___-__-__"})
     })
 
     $('.modal-body').on('submit', '#formID', function () {
@@ -16,6 +17,7 @@ $(document).ready(function () {
                 $('.modal-body').html(data.body);
                 if(data.result) {
                     $('#modal-application').modal('hide');
+                    $('.modal-body').find(form).remove()
                 }
             },
             error: (error) => {

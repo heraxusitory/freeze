@@ -12,14 +12,14 @@
         {{--                        <input type="text" class="form-control" id="lastName" placeholder="Иванов">--}}
 
         <label for="phoneNumber">Телефон</label>
-        <input type="tel" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" id="phoneNumber">
+        <input type="tel" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" id="phoneNumber" value="{{ isset($number) ? $number: '' }}">
 
         @error('phoneNumber')
         <div class="alert alert-danger">{{ $errors->first('phoneNumber')  }}</div>
         @enderror
 
         <label for="email">@-mail</label>
-        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="name@example.com">
+        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="name@example.com" value="{{ isset($email) ? $email: '' }}">
 
         @error('email')
         <div class="alert alert-danger">{{ $errors->first('email')  }}</div>
@@ -47,11 +47,6 @@
     {{--                    </div>--}}
     <div class="form-group">
         <label for="service">Напишите нам</label>
-        <textarea class="form-control @error('service') is-invalid @enderror" name="service" rows="3"></textarea>
-
-
+        <textarea class="form-control" name="service" rows="3"></textarea>
     </div>
-    @error('service')
-    <div class="alert alert-danger">{{ $errors->first('service')  }}</div>
-    @enderror
 </form>
