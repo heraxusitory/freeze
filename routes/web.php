@@ -20,6 +20,11 @@ Route::get('/', function () {
 Route::get('/form/get', 'FormController@getForm')->name('get.form');
 Route::post('/form/store', 'FormController@formStore')->name('form.store');
 
+Route::prefix('question')->group(function() {
+    Route::get('form/get', 'QuestionController@getForm')->name('question.form.get');
+    Route::post('form/store', 'QuestionController@storeGuestQuestion')->name('question.form.store');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
