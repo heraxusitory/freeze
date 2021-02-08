@@ -3,16 +3,27 @@
     <div class="form-group">
 
         <label for="firstName">Имя</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Иван">
+        <input type="text" class="form-control @error('firstName') is-invalid @enderror" name="firstName" placeholder="Иван">
+        @error('firstName')
+        <div class="alert alert-danger">{{ $errors->first('firstName') }}</div>
+        @enderror
 
         {{--                        <label for="lastName">Фамилия</label>--}}
         {{--                        <input type="text" class="form-control" id="lastName" placeholder="Иванов">--}}
 
         <label for="phoneNumber">Телефон</label>
-        <input type="number" class="form-control" id="phoneNumber" placeholder="+7(999)-999-99-99">
+        <input type="tel" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" id="phoneNumber">
+
+        @error('phoneNumber')
+        <div class="alert alert-danger">{{ $errors->first('phoneNumber')  }}</div>
+        @enderror
 
         <label for="email">@-mail</label>
-        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="name@example.com">
+
+        @error('email')
+        <div class="alert alert-danger">{{ $errors->first('email')  }}</div>
+        @enderror
     </div>
     {{--                    <div class="form-group">--}}
     {{--                        <label for="exampleFormControlSelect1">Example select</label>--}}
@@ -36,6 +47,11 @@
     {{--                    </div>--}}
     <div class="form-group">
         <label for="service">Напишите нам</label>
-        <textarea class="form-control" id="service" rows="3"></textarea>
+        <textarea class="form-control @error('service') is-invalid @enderror" name="service" rows="3"></textarea>
+
+
     </div>
+    @error('service')
+    <div class="alert alert-danger">{{ $errors->first('service')  }}</div>
+    @enderror
 </form>

@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+    $('.modal-body').on('input', '#phoneNumber', function() {
+        $(this).mask("+7(999)-999-99-99")
+    })
+
     $('.modal-body').on('submit', '#formID', function () {
         let form = $(this)
         $.ajax({
@@ -9,7 +13,10 @@ $(document).ready(function () {
             dataType: "json",
             success: (data) => {
                 console.log('success', data)
-                $('#modal-application').modal('hide');
+                $('.modal-body').html(data.body);
+                if(data.result) {
+                    $('#modal-application').modal('hide');
+                }
             },
             error: (error) => {
                 console.log('error', error)
@@ -43,8 +50,11 @@ $(document).ready(function () {
             complete: () => {
             },
             error: (error) => {
-                consolr.log(error)
+                console.log(error)
+
             }
         })
     })
+
+
 })
