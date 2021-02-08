@@ -8,3 +8,23 @@
 .br-w-1 {
     border: 1px solid #ffffff;
 }
+
+h3.title.hight {
+    font-size: 60px;
+}
+
+
+/*@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 769px) {
+
+}*/
+@media (max-width: 460px) {
+    h3.title.hight {
+        font-size: 30px;
+    }
+}
