@@ -3,6 +3,7 @@
 
 @section('css')
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/review.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -45,10 +46,3 @@
 {{--    @include('layouts.forms.form')--}}
 @endsection
 
-@section('js')
-
-@endsection
-
-@section('js')
-    <script src="{{ asset('/js/main/index.js') }}"></script>
-@endsection

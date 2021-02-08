@@ -1,0 +1,12 @@
+.review {
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+.review:hover {
+    box-shadow: 18px -10px rgba(225, 225, 0, 1);
+    transition: 1s;
+}
