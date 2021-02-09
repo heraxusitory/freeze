@@ -1,9 +1,9 @@
-<form action="{{route('form.store')}}" method="POST" id="formID">
+<form action="{{route('request.form.store')}}" method="POST" id="formID">
     @csrf
     <div class="form-group">
 
         <label for="firstName">Имя</label>
-        <input type="text" class="form-control @error('firstName') is-invalid @enderror" name="firstName" placeholder="Иван">
+        <input type="text" class="form-control @error('firstName') is-invalid @enderror" name="firstName" placeholder="Иван" value="{{ isset($fields['name']) ? $fields['name'] : '' }}">
         @error('firstName')
         <div class="alert alert-danger">{{ $errors->first('firstName') }}</div>
         @enderror
@@ -12,14 +12,14 @@
         {{--                        <input type="text" class="form-control" id="lastName" placeholder="Иванов">--}}
 
         <label for="phoneNumber">Телефон</label>
-        <input type="tel" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" id="phoneNumber" value="{{ isset($number) ? $number: '' }}">
+        <input type="tel" class="form-control @error('phoneNumber') is-invalid @enderror" name="phoneNumber" id="phoneNumber" value="{{ isset($fields['number']) ? $fields['number'] : '' }}">
 
         @error('phoneNumber')
         <div class="alert alert-danger">{{ $errors->first('phoneNumber')  }}</div>
         @enderror
 
         <label for="email">@-mail</label>
-        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="name@example.com" value="{{ isset($email) ? $email: '' }}">
+        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="name@example.com" value="{{ isset($fields['email']) ? $fields['email'] : '' }}">
 
         @error('email')
         <div class="alert alert-danger">{{ $errors->first('email')  }}</div>
@@ -47,6 +47,9 @@
     {{--                    </div>--}}
     <div class="form-group">
         <label for="service">Напишите нам</label>
-        <textarea class="form-control" name="service" rows="3"></textarea>
+        <textarea class="form-control @error('letter') is-invalid @enderror" name="letter" rows="3">{{ isset($fields['letter']) ? $fields['letter'] : '' }}</textarea>
     </div>
+    @error('letter')
+    <div class="alert alert-danger">{{ $errors->first('letter')  }}</div>
+    @enderror
 </form>

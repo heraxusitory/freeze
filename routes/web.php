@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('main.index');
 })->name('main');
 
-Route::get('/form/get', 'FormController@getForm')->name('get.form');
-Route::post('/form/store', 'FormController@formStore')->name('form.store');
+Route::prefix('request')->group(function() {
+    Route::get('/form/get', 'RequestMessageController@getForm')->name('request.form.get');
+    Route::post('/form/store', 'RequestMessageController@storeForm')->name('request.form.store');
+});
+
 
 Route::prefix('question')->group(function() {
     Route::get('form/get', 'QuestionController@getForm')->name('question.form.get');
