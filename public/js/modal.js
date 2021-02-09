@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $('.modal-content').on('click', '#sendForm', function () {
         console.log($(this))
-        $('.modal-body').find('#formID').submit();
+        $('.modal-body').find('form').submit();
     })
 
     $('.application').click(function () {
