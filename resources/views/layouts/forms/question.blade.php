@@ -2,7 +2,7 @@
     @csrf
     <div class="form-group">
         <label for="question" class="title">Спросите, что вас интересует</label>
-        <textarea id="question" class="form-control" required name="question"></textarea>
+        <textarea placeholder="Задать вопрос..." id="question" class="form-control" required name="question"></textarea>
         <div class="alert alert-danger error-report" style="display:none;"></div>
     </div>
     <div class="form-group">
@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         <label for="name" class="title">Как к вам обращаться?</label>
-        <input class="form-control" type="tel" id="name" required name="name">
+        <input placeholder="Ваше имя" class="form-control" type="text" id="name" required name="name">
         <div class="alert alert-danger error-report" style="display:none;"></div>
     </div>
     <div class="form-group">
