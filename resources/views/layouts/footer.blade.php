@@ -8,6 +8,7 @@
     <script src="{{ asset('/plugins/jquery-mask.min.js') }}"></script>
 
     <script src="{{ asset('js/main/question.js') }}"></script>
+    <script src="{{ asset('js/main/request.js') }}"></script>
     <script src="{{ asset('js/modal.js') }}"></script>
 
     <script src="{{ asset('/js/main/index.js') }}"></script>
