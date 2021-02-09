@@ -44,9 +44,7 @@ header .text-display .subtitle {
     display: flex;
     justify-content: space-around;
     color: #ffffff;
-    /*background-color: #3f3f3f;*/
     background-color: green;
-    /*background-color: #1c7430;*/
     text-align: center;
 }
 
