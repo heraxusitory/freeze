@@ -39,10 +39,11 @@ class RequestMessageController extends Controller
         $validator = Validator::make($request->all(), [
             'firstName' => 'required|max:20',
             'phoneNumber' => 'required|min:17',
-            'email' => 'nullable|email:rfc,dns,spoof,filter,strict',
+            'email' => 'nullable|email:rfc,dns,spoof,filter,strict', //TODO: Думаю проблема кроется где-то тут...
             'letter' => 'max:1000'
         ], $messages);
-
+        // TODO: Заполнить не всю форму - поля: имя, телефон - фома улетает, все збс
+        // TODO: Заполнить ВСЕ поля в форме - форма улетает, бэк валится с 500 ошибкой
         if ($validator->fails()) {
             return response()->json([
                 'result' => false,
