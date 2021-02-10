@@ -19,13 +19,6 @@
     align-items: center;
 }
 
-/*.title-absolute .absolute-obj {
-    position: absolute;
-    top: 45%;
-    color: #ffffff;
-    background-color: rgba(0,0,0,0.3);
-    width: 100%;
-}*/
 .title-container {
     color: #ffffff;
     background-color: rgba(0,0,0,0.3);

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Main')
+@section('title', 'Главная')
 
 @section('css')
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">

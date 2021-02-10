@@ -28,6 +28,10 @@ Route::prefix('question')->group(function() {
     Route::post('form/store', 'QuestionController@storeGuestQuestion')->name('question.form.store');
 });
 
+Route::prefix('offers')->group(function() {
+   Route::get('/all', 'OffersController@activeAll')->name('offers.all.active');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
