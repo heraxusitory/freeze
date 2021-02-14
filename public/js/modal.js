@@ -7,34 +7,6 @@ $(document).ready(function () {
         modal.find('.modal-title').text('')
     })
 
-    // //Отправка формы на контроллер
-    // TODO: переехал в request.js
-    // $('.modal-body').on('submit', 'form', function () {
-    //     let form = $(this)
-    //     $.ajax({
-    //         url: form.attr('action'),
-    //         method: "POST",
-    //         data: form.serialize(),
-    //         dataType: "json",
-    //         success: (data) => {
-    //             //Рендерим форму
-    //             let modalBody =  $('.modal-body');
-    //             modalBody.html(data.body);
-    //             if (data.result) {
-    //                 //скрываем модалку и удаля
-    //                 $('#modal-application').modal('hide');
-    //             } else {
-    //                 modalBody.find('input[type=tel]').mask("+7(999)-999-99-99", {placeholder: "+7(___)-___-__-__"})
-    //             }
-    //         },
-    //         error: (error) => {
-    //             console.log('error', error)
-    //         }
-    //
-    //     });
-    //     return false;
-    // })
-
     //Навешивание сабмита на форму в модальном окне
     $('.modal-content').on('click', '.send-form', function () {
         $('.modal-body').find('form').submit();
