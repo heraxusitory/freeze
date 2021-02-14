@@ -12,6 +12,20 @@ const submitReview = (event) => {
             if (data.result) {
                 //скрываем модалку и удаля
                 $('#modal-application').modal('hide');
+
+                $.ajax({
+                    url: $('#reviews').attr('data-url'),
+                    method: 'GET',
+                    beforeSend: function() {
+                        $('#reviews').find('.container').html(
+                            "<div class='spinner-border text-success' role='status'> <span class='sr-only'>Loading...</span> </div>"
+                        )
+                    },
+                    success:(data) => {
+                            $('#reviews').find('.container').html(data)
+                    }
+                })
+
                 showTooltipModal('Спасибо за отзыв!');
             } else {
                 modalBody.find('input[type=tel]').mask("+7(999)-999-99-99", {placeholder: "+7(___)-___-__-__"})

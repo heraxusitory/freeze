@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reviews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -57,6 +58,9 @@ class ReviewsController extends Controller
                 'body' => view('layouts.forms.review_form', compact('fields'))->withErrors($validator)->render()
             ]);
         }
+
+        Reviews::createOrUpdateReview($fields);
+
         return response()->json([
             'result' => true,
             'message' => 'success',

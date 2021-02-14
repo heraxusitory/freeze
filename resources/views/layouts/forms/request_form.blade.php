@@ -47,9 +47,9 @@
     {{--                    </div>--}}
     <div class="form-group">
         <label for="service">Напишите нам</label>
-        <textarea class="form-control @error('letter') is-invalid @enderror" name="letter" rows="3">{{ isset($fields['letter']) ? $fields['letter'] : '' }}</textarea>
+        <textarea class="form-control @error('request') is-invalid @enderror" name="request" rows="3">{{ isset($fields['request']) ? $fields['request'] : '' }}</textarea>
     </div>
-    @error('letter')
-    <div class="alert alert-danger">{{ $errors->first('letter')  }}</div>
+    @error('request')
+    <div class="alert alert-danger">{{ $errors->first('request')  }}</div>
     @enderror
 </form>

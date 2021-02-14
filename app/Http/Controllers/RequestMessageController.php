@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -23,7 +24,7 @@ class RequestMessageController extends Controller
         $fields['name'] = $request->input('firstName');
         $fields['number'] = $request->input('phoneNumber');
         $fields['email'] = $request->input('email');
-        $fields['letter'] = $request->input('letter');
+        $fields['request'] = $request->input('request');
 
         $title = 'Оставить заявку';
 
@@ -33,14 +34,14 @@ class RequestMessageController extends Controller
             'phoneNumber.required' => 'Введите номер телефона',
             'phoneNumber.min' => 'Недостаточно цифр',
             'email.email' => 'Почта некорректна',
-            'letter.max' => 'Письмо должно содержать не более :max символов'
+            'request.max' => 'Письмо должно содержать не более :max символов'
         ];
 
         $validator = Validator::make($request->all(), [
             'firstName' => 'required|max:20',
             'phoneNumber' => 'required|min:17',
             'email' => 'nullable|email:rfc,dns,spoof,filter,strict', //TODO: Думаю проблема кроется где-то тут...
-            'letter' => 'max:1000'
+            'request' => 'max:1000'
         ], $messages);
         // TODO: Заполнить не всю форму - поля: имя, телефон - фома улетает, все збс
         // TODO: Заполнить ВСЕ поля в форме - форма улетает, бэк валится с 500 ошибкой
@@ -52,6 +53,9 @@ class RequestMessageController extends Controller
                 'body' => view('layouts.forms.request_form', compact('fields'))->withErrors($validator)->render()
             ]);
         }
+
+        Requests::createOrUpdateRequest($fields);
+
         return response()->json([
             'result' => true,
             'message' => 'success',

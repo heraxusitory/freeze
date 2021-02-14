@@ -36,7 +36,7 @@
         </div>
 
         <div class="info-block">
-            <div id="reviews">
+            <div id="reviews"  data-url="{{ route('main') }}">
                 <h4>Отзывы</h4>
                 @include('main.reviews')
             </div>

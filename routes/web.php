@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main.index');
-})->name('main');
+//Route::get('/', function () {
+//    return view('main.index');
+//})->name('main');
+
+Route::get('/', 'MainController@index')->name('main');
 
 Route::group(['prefix' => 'request'],function() {
     Route::get('/form/get', 'RequestMessageController@getForm')->name('request.form.get');
