@@ -36,13 +36,13 @@
         </div>
 
         <div class="info-block">
-            <div id="reviews"  data-url="{{ route('main') }}">
+            <div id="reviews" data-url="{{ route('main') }}">
                 <h4>Отзывы</h4>
                 @include('main.reviews')
             </div>
         </div>
     </div>
 
-{{--    @include('layouts.forms.form')--}}
+    {{--    @include('layouts.forms.form')--}}
 @endsection
 

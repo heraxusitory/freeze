@@ -7,7 +7,7 @@ const submitReview = (event) => {
         dataType: "json",
         success: (data) => {
             //Рендерим форму
-            let modalBody =  $('.modal-body');
+            let modalBody = $('.modal-body');
             modalBody.html(data.body);
             if (data.result) {
                 //скрываем модалку и удаля
@@ -16,13 +16,13 @@ const submitReview = (event) => {
                 $.ajax({
                     url: $('#reviews').attr('data-url'),
                     method: 'GET',
-                    beforeSend: function() {
+                    beforeSend: function () {
                         $('#reviews').find('.container').html(
                             "<div class='spinner-border text-success' role='status'> <span class='sr-only'>Loading...</span> </div>"
                         )
                     },
-                    success:(data) => {
-                            $('#reviews').find('.container').html(data)
+                    success: (data) => {
+                        $('#reviews').find('.container').html(data)
                     }
                 })
 
@@ -30,12 +30,12 @@ const submitReview = (event) => {
             } else {
                 modalBody.find('input[type=tel]').mask("+7(999)-999-99-99", {placeholder: "+7(___)-___-__-__"})
                 modalBody.find('#rating').rateYo({
-                    rating:  modalBody.find('input[name=rating]').val(),
+                    rating: modalBody.find('input[name=rating]').val(),
                     fullStar: true,
                     multiColor: true,
                     spacing: "5px",
-                    onSet: function(rating, rateYoInstance) {
-                        modalBody.find('input[name=rating]').attr('value',rating)
+                    onSet: function (rating, rateYoInstance) {
+                        modalBody.find('input[name=rating]').attr('value', rating)
                     }
                 });
             }

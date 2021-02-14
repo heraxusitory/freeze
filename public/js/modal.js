@@ -2,8 +2,8 @@ $(document).ready(function () {
 
     //При закрытии модалки удаляется содержимое тайтла, удаляется форма из DOM
     $('#modal-application').on('hidden.bs.modal', function () {
-        let modal =  $(this);
-       modal.find('form').remove()
+        let modal = $(this);
+        modal.find('form').remove()
         modal.find('.modal-title').text('')
     })
 
@@ -65,7 +65,7 @@ $(document).ready(function () {
                     fullStar: true,
                     multiColor: true,
                     spacing: "5px",
-                    onSet: function(rating, rateYoInstance) {
+                    onSet: function (rating, rateYoInstance) {
                         modalBody.find('input[name=rating]').attr('value', rating)
                     }
                 });

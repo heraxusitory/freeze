@@ -19,22 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@index')->name('main');
 
-Route::group(['prefix' => 'request'],function() {
+Route::group(['prefix' => 'request'], function () {
     Route::get('/form/get', 'RequestMessageController@getForm')->name('request.form.get');
     Route::post('/form/store', 'RequestMessageController@storeForm')->name('request.form.store');
 });
 
 
-Route::prefix('question')->group(function() {
+Route::prefix('question')->group(function () {
     Route::get('form/get', 'QuestionController@getForm')->name('question.form.get');
     Route::post('form/store', 'QuestionController@storeGuestQuestion')->name('question.form.store');
 });
 
-Route::prefix('offers')->group(function() {
-   Route::get('/all', 'OffersController@activeAll')->name('offers.all.active');
+Route::prefix('offers')->group(function () {
+    Route::get('/all', 'OffersController@activeAll')->name('offers.all.active');
 });
 
-Route::group(['prefix' => 'review'],function() {
+Route::group(['prefix' => 'review'], function () {
     Route::get('/form/get', 'ReviewsController@getForm')->name('review.form.get');
     Route::post('/form/store', 'ReviewsController@storeForm')->name('review.form.store');
 });

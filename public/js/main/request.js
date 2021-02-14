@@ -1,4 +1,3 @@
-
 //Отправка формы на контроллер
 const submitRequest = (event) => {
     let form = $(event.currentTarget);
@@ -9,7 +8,7 @@ const submitRequest = (event) => {
         dataType: "json",
         success: (data) => {
             //Рендерим форму
-            let modalBody =  $('.modal-body');
+            let modalBody = $('.modal-body');
             modalBody.html(data.body);
             if (data.result) {
                 //скрываем модалку и удаля
