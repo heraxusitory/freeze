@@ -23,6 +23,9 @@ const submitReview = (event) => {
                     },
                     success: (data) => {
                         $('#reviews').find('.container').html(data)
+                    },
+                    error: (error) => {
+                        console.log('error: ', error)
                     }
                 })
 
