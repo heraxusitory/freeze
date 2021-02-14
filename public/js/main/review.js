@@ -1,10 +1,8 @@
-
-//Отправка формы на контроллер
-const submitRequest = (event) => {
+const submitReview = (event) => {
     let form = $(event.currentTarget);
     $.ajax({
         url: form.attr('action'),
-        method: "POST",
+        method: form.attr('method'),
         data: form.serialize(),
         dataType: "json",
         success: (data) => {
@@ -14,9 +12,18 @@ const submitRequest = (event) => {
             if (data.result) {
                 //скрываем модалку и удаля
                 $('#modal-application').modal('hide');
-                showTooltipModal('Ваша заявка успешно принята, ожидайте обратной связи!');
+                showTooltipModal('Спасибо за отзыв!');
             } else {
                 modalBody.find('input[type=tel]').mask("+7(999)-999-99-99", {placeholder: "+7(___)-___-__-__"})
+                modalBody.find('#rating').rateYo({
+                    rating:  modalBody.find('input[name=rating]').val(),
+                    fullStar: true,
+                    multiColor: true,
+                    spacing: "5px",
+                    onSet: function(rating, rateYoInstance) {
+                        modalBody.find('input[name=rating]').attr('value',rating)
+                    }
+                });
             }
         },
         error: (error) => {
@@ -28,5 +35,5 @@ const submitRequest = (event) => {
 }
 
 $(document).ready(() => {
-    $('#modal-application').on('submit', '#requestForm', submitRequest);
+    $('#modal-application').on('submit', '#reviewForm', submitReview);
 });

@@ -1,4 +1,4 @@
-<form action="{{route('request.form.store')}}" method="POST" id="requestForm">
+<form action="{{route('review.form.store')}}" method="POST" id="reviewForm">
     @csrf
     <div class="form-group">
 
@@ -46,10 +46,16 @@
     {{--                        </select>--}}
     {{--                    </div>--}}
     <div class="form-group">
-        <label for="service">Напишите нам</label>
-        <textarea class="form-control @error('letter') is-invalid @enderror" name="letter" rows="3">{{ isset($fields['letter']) ? $fields['letter'] : '' }}</textarea>
+        <label for="service">Отзыв</label>
+        <textarea class="form-control @error('review') is-invalid @enderror" name="review" rows="3">{{ isset($fields['review']) ? $fields['review'] : '' }}</textarea>
     </div>
-    @error('letter')
-    <div class="alert alert-danger">{{ $errors->first('letter')  }}</div>
+    @error('review')
+    <div class="alert alert-danger">{{ $errors->first('review')  }}</div>
     @enderror
+
+    <div id="rating"></div>
+    @error('rating')
+    <div class="alert alert-danger">{{ $errors->first('rating')  }}</div>
+    @enderror
+    <input type="hidden" name="rating" value="{{ isset($fields['rating']) ? $fields['rating'] : '1' }}">
 </form>

@@ -60,6 +60,15 @@ $(document).ready(function () {
                 modalTitle.text(data.title)
                 form.find('.modal-title').text(form.title)
                 modalBody.find('input[type=tel]').mask("+7(999)-999-99-99", {placeholder: "+7(___)-___-__-__"})
+                modalBody.find('#rating').rateYo({
+                    rating: 1,
+                    fullStar: true,
+                    multiColor: true,
+                    spacing: "5px",
+                    onSet: function(rating, rateYoInstance) {
+                        modalBody.find('input[name=rating]').attr('value', rating)
+                    }
+                });
             },
             complete: () => {
             },

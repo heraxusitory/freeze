@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('main.index');
 })->name('main');
 
-Route::prefix('request')->group(function() {
+Route::group(['prefix' => 'request'],function() {
     Route::get('/form/get', 'RequestMessageController@getForm')->name('request.form.get');
     Route::post('/form/store', 'RequestMessageController@storeForm')->name('request.form.store');
 });
@@ -30,6 +30,11 @@ Route::prefix('question')->group(function() {
 
 Route::prefix('offers')->group(function() {
    Route::get('/all', 'OffersController@activeAll')->name('offers.all.active');
+});
+
+Route::group(['prefix' => 'review'],function() {
+    Route::get('/form/get', 'ReviewsController@getForm')->name('review.form.get');
+    Route::post('/form/store', 'ReviewsController@storeForm')->name('review.form.store');
 });
 
 Auth::routes();
