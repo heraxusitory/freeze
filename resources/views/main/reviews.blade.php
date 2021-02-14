@@ -6,7 +6,7 @@
         @foreach($reviews as $review)
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-                <div class="review">
+                <div class="review" style="word-break: break-word">
                     <h5>{{$review->name}} <span>{{$review->email}}</span></h5>
 {{--                    <span>{{$review->rating}}</span>--}}
                     <div class="star-rating" style="display: flex; justify-content: left">
