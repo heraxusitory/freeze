@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/jquery.rateyo.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/plugins/jquery.rateyo.css') }}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/tools.css') }}" rel="stylesheet">
     @yield('css')
@@ -36,13 +36,18 @@
                 </div>
             </div>
         </div>
-        <ul class="nav custom-main_navigation">
-            <li class="nav-item"><a class="nav-link" href="{{ route('main') }}">Главная</a></li>
-            <li class="nav-item"><a class="nav-link application" href="#" data-url="{{route('request.form.get')}}" data-toggle="modal" data-target="#modal-application">Оставить заявку</a></li>
-            <li class="nav-item"><a class="nav-link application" href="#" data-url="{{route('review.form.get')}}" data-toggle="modal" data-target="#modal-application">Отзывы</a></li>
-            <li class="nav-item"><a class="nav-link application" href="#" data-url="{{route('question.form.get')}}" data-toggle="modal" data-target="#modal-application">Задать вопрос</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('offers.all.active') }}">Открытые предложения</a></li>
-        </ul>
     </div>
 </header>
+<div class="container" id="styickyNav">
+    <ul class="nav custom-main_navigation">
+        <li class="nav-item"><a class="nav-link" href="{{ route('main') }}">Главная</a></li>
+        <li class="nav-item"><a class="nav-link application" href="#" data-url="{{route('request.form.get')}}"
+                                data-toggle="modal" data-target="#modal-application">Оставить заявку</a></li>
+        <li class="nav-item"><a class="nav-link application" href="#" data-url="{{route('review.form.get')}}"
+                                data-toggle="modal" data-target="#modal-application">Отзывы</a></li>
+        <li class="nav-item"><a class="nav-link application" href="#" data-url="{{route('question.form.get')}}"
+                                data-toggle="modal" data-target="#modal-application">Задать вопрос</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('offers.all.active') }}">Открытые предложения</a></li>
+    </ul>
+</div>
 <div id="app">

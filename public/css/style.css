@@ -40,6 +40,13 @@ header .text-display .subtitle {
     font-size: 22px;
 }
 
+#styickyNav {
+    position:-webkit-sticky;
+    position:sticky;
+    top:0;
+    z-index: 3;
+}
+
 .custom-main_navigation {
     display: flex;
     justify-content: space-around;

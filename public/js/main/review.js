@@ -13,21 +13,7 @@ const submitReview = (event) => {
                 //скрываем модалку и удаля
                 $('#modal-application').modal('hide');
 
-                $.ajax({
-                    url: $('#reviews').attr('data-url'),
-                    method: 'GET',
-                    beforeSend: function () {
-                        $('#reviews').find('.container').html(
-                            "<div class='spinner-border text-success' role='status'> <span class='sr-only'>Loading...</span> </div>"
-                        )
-                    },
-                    success: (data) => {
-                        $('#reviews').find('.container').html(data)
-                    },
-                    error: (error) => {
-                        console.log('error: ', error)
-                    }
-                })
+                reloadReviews();
 
                 showTooltipModal('Спасибо за отзыв!');
             } else {
@@ -49,6 +35,26 @@ const submitReview = (event) => {
 
     });
     return false;
+}
+
+const reloadReviews = () => {
+
+    $.ajax({
+        url: $('#reviews').attr('data-url'),
+        method: 'GET',
+        beforeSend: function () {
+            $('#reviews').find('.container').html(
+                "<div class='spinner-border text-success' role='status'> <span class='sr-only'>Loading...</span> </div>"
+            )
+        },
+        success: (data) => {
+            $('#reviews').find('.container').html(data)
+        },
+        error: (error) => {
+            console.log('error: ', error)
+        }
+    })
+
 }
 
 $(document).ready(() => {
