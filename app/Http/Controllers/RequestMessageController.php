@@ -40,7 +40,7 @@ class RequestMessageController extends Controller
         $validator = Validator::make($request->all(), [
             'firstName' => 'required|max:20',
             'phoneNumber' => 'required|min:17',
-            'email' => 'nullable|email:rfc,dns,spoof,filter,strict',
+            'email' => 'nullable|email:rfc,dnsgit,filter,strict',
             'request' => 'max:1000'
         ], $messages);
 
