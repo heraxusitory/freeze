@@ -58,7 +58,7 @@ class ReviewsController extends Controller
                 'body' => view('layouts.forms.review_form', compact('fields'))->withErrors($validator)->render()
             ]);
         }
-
+//        TODO: See model Review.php
         Reviews::createOrUpdateReview($fields);
 
         return response()->json([

@@ -23,4 +23,7 @@ class Reviews extends Model
             ['name' => $fields['name'], 'review' => $fields['review'], 'rating' => $fields['rating']]
         );
     }
+
+    // TODO: Фича - криэйт отделить от апдейта, и юзать в разных функционалах ->
+    // TODO: когда нужно дополнить отзыв, а когда написать новый
 }
