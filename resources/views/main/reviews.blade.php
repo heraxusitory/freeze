@@ -8,7 +8,12 @@
 
                 <div class="review">
                     <h5>{{$review->name}} <span>{{$review->email}}</span></h5>
-                    <span>{{$review->rating}}</span>
+{{--                    <span>{{$review->rating}}</span>--}}
+                    <div class="star-rating" style="display: flex; justify-content: left">
+                        @for($count = 1; $count <= $review->rating; $count++)
+                            <img src="{{ asset('/img/icons/star-rating.svg') }}">
+                        @endfor
+                    </div>
                     <p>{{$review->review}}</p>
                 </div>
 
